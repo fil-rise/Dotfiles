@@ -859,3 +859,11 @@ nvim .config/nvim/colors/custom.vim
 clear
 nvim .config/nvim/init.lua
 cd .config
+git add .
+git commit -m "nvim modification gitsign"
+git push
+nvim .config/nvim/init.lua
+nvim nvim/init.lua
+nvim .config/nvim/init.lua
+git add .
+cd .config

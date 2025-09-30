@@ -10,6 +10,7 @@ vim.cmd [[
   Plug 'numToStr/Comment.nvim'
   Plug 'alvan/vim-closetag'
   Plug 'lewis6991/gitsigns.nvim'
+  Plug 'norcalli/nvim-colorizer.lua'
 
   call plug#end()
 ]]
@@ -38,30 +39,9 @@ vim.api.nvim_set_hl(0, "StatusLineGitDiffChanged", { fg = "#e5c07b", bg = "#3030
 vim.api.nvim_set_hl(0, "StatusLineGitDiffRemoved", { fg = "#e06c75", bg = "#303030" })
 vim.api.nvim_set_hl(0, "StatusLineGitBranchIcon", { fg = "#61afef", bg = "#303030" })
 
-
---===================================================================================================================
---SETUPS+PLUGINS
---===================================================================================================================
-
-require("statusline")
-require('gitsigns').setup()
-
--- Treesitter
-require('nvim-treesitter.configs').setup {
-  ensure_installed = { "lua", "vim", "python", "c", "cpp", "html", "css" },
-  highlight = { enable = true },
-  indent = { enable = true }
-}
-
--- Autopairs
-require('nvim-autopairs').setup{}
-
--- Comment.nvim
-require('Comment').setup()
-
--- vim-closetag
-vim.g.closetag_filenames = '*.html'
-vim.g.closetag_filetypes = 'html'
+vim.api.nvim_set_hl(0, "GitSignsAdd", { fg = "#98c379", bg = "none" })
+vim.api.nvim_set_hl(0, "GitSignsChange", { fg = "#e5c07b", bg = "none" })
+vim.api.nvim_set_hl(0, "GitSignsDelete", { fg = "#e06c75", bg = "none" })
 
 --===================================================================================================================
 --OPTIONS
@@ -132,6 +112,31 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 })
 
 -- vim.opt.signcolumn = 'no'
+
+--===================================================================================================================
+--SETUPS+PLUGINS
+--===================================================================================================================
+
+require('statusline')
+require('gitsigns').setup()
+require('colorizer').setup()
+
+-- Treesitter
+require('nvim-treesitter.configs').setup {
+  ensure_installed = { "lua", "vim", "python", "c", "cpp", "html", "css" },
+  highlight = { enable = true },
+  indent = { enable = true }
+}
+
+-- Autopairs
+require('nvim-autopairs').setup{}
+
+-- Comment.nvim
+require('Comment').setup()
+
+-- vim-closetag
+vim.g.closetag_filenames = '*.html'
+vim.g.closetag_filetypes = 'html'
 
 --===================================================================================================================
 --KEYMAPS
