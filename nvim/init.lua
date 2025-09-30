@@ -11,6 +11,8 @@ vim.cmd [[
   Plug 'alvan/vim-closetag'
   Plug 'lewis6991/gitsigns.nvim'
   Plug 'norcalli/nvim-colorizer.lua'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
 
   call plug#end()
 ]]
@@ -59,7 +61,7 @@ vim.opt.numberwidth = 5
 vim.o.showmode = false
 
 vim.schedule(function()
-  vim.o.clipboard = 'unnamedplus'
+    vim.o.clipboard = 'unnamedplus'
 end)
 
 vim.o.breakindent = true
@@ -79,12 +81,14 @@ vim.o.scrolloff = 10
 vim.o.confirm = true
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.hl.on_yank()
-  end,
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+        vim.hl.on_yank()
+    end,
 })
+
+vim.opt.clipboard = "unnamedplus"
 
 vim.opt.termguicolors = true
 vim.opt.tabstop = 4  
@@ -102,13 +106,13 @@ vim.opt.completeopt = { "menu", "menuone", "noselect" }
 
 --open from where you left
 vim.api.nvim_create_autocmd("BufReadPost", {
-  pattern = "*",
-  callback = function()
-    local line = vim.fn.line("'\"")
-    if line > 1 and line <= vim.fn.line("$") then
-      vim.cmd("normal! g`\"")
-    end
-  end,
+    pattern = "*",
+    callback = function()
+        local line = vim.fn.line("'\"")
+        if line > 1 and line <= vim.fn.line("$") then
+            vim.cmd("normal! g`\"")
+        end
+    end,
 })
 
 -- vim.opt.signcolumn = 'no'
@@ -123,9 +127,9 @@ require('colorizer').setup()
 
 -- Treesitter
 require('nvim-treesitter.configs').setup {
-  ensure_installed = { "lua", "vim", "python", "c", "cpp", "html", "css" },
-  highlight = { enable = true },
-  indent = { enable = true }
+    ensure_installed = { "lua", "vim", "python", "c", "cpp", "html", "css" },
+    highlight = { enable = true },
+    indent = { enable = true }
 }
 
 -- Autopairs
@@ -176,42 +180,147 @@ vim.keymap.set('n', '<leader>vs', ':vsplit | Ex<CR>')
 vim.keymap.set('n', '<leader>hs', ':split | Ex<CR>')
 
 --===================================================================================================================
---CODE-RUNNER
+--TELESCOP
 --===================================================================================================================
 
-local function run_file()
-    local filetype = vim.bo.filetype
-    local filename = vim.fn.expand('%:t')  -- Get filename with extension
-    local filepath = vim.fn.expand('%:p')  -- Get full path
+local telescope = require('telescope')
+local builtin = require('telescope.builtin')
+local utils = require('telescope.utils')
 
-    local command = ""
+local function find_project_root(path)
+    path = path or vim.fn.getcwd()
 
-    if filetype == 'cpp' then
-        command = string.format(
-            "g++ '%s' -o cpp.out && clear && ./cpp.out", 
-            filepath
-        )
-    elseif filetype == 'c' then
-        command = string.format(
-            "gcc '%s' -o c.out && clear && ./c.out", 
-            filepath
-        )
-    elseif filetype == 'python' then
-        command = string.format(
-            "clear && python3 '%s'", 
-            filepath
-        )
+    if vim.fn.filereadable(path .. '/.project') == 1 then
+        return path
+    end
+
+    local parent = vim.fn.fnamemodify(path, ':h')
+    if parent == path then
+        return nil
+    end
+
+    return find_project_root(parent)
+end
+
+local function project_find_files(opts)
+    opts = opts or {}
+
+    local project_root = find_project_root()
+    if project_root then
+        opts.cwd = project_root
     else
-        vim.notify("Unsupported file type: " .. filetype, vim.log.levels.WARN)
+        opts.cwd = vim.fn.getcwd()
+    end
+
+    builtin.find_files(opts)
+end
+
+local function find_projects()
+    local home = vim.fn.expand('~')
+    local projects = {}
+
+    local search_dirs = {
+        home .. '/projects',
+        home .. '/work',
+        home .. '/code',
+        home .. '/dev',
+        home .. '/src',
+        home,
+    }
+
+    for _, dir in ipairs(search_dirs) do
+        if vim.fn.isdirectory(dir) == 1 then
+            local find_cmd = string.format('find %s -name ".project" -type f 2>/dev/null', vim.fn.shellescape(dir))
+            local handle = io.popen(find_cmd)
+            if handle then
+                for line in handle:lines() do
+                    local project_dir = vim.fn.fnamemodify(line, ':h')
+                    local project_name = vim.fn.fnamemodify(project_dir, ':t')
+                    table.insert(projects, {
+                        name = project_name,
+                        path = project_dir,
+                        display = string.format("%s (%s)", project_name, project_dir)
+                    })
+                end
+                handle:close()
+            end
+        end
+    end
+
+    return projects
+end
+
+local function switch_project()
+    local projects = find_projects()
+
+    if #projects == 0 then
+        print("No projects with .project files found")
         return
     end
 
-    vim.cmd('w')
-    vim.cmd('vsplit | terminal ' .. command)
+    require('telescope.pickers').new({}, {
+        prompt_title = 'Switch Project',
+        finder = require('telescope.finders').new_table({
+            results = projects,
+            entry_maker = function(entry)
+                return {
+                    value = entry,
+                    display = entry.display,
+                    ordinal = entry.name .. ' ' .. entry.path,
+                }
+            end,
+        }),
+        sorter = require('telescope.config').values.generic_sorter({}),
+        attach_mappings = function(prompt_bufnr, map)
+            require('telescope.actions').select_default:replace(function()
+                local selection = require('telescope.actions.state').get_selected_entry()
+                require('telescope.actions').close(prompt_bufnr)
+
+                if selection then
+                    vim.cmd('cd ' .. selection.value.path)
+                    print('Switched to project: ' .. selection.value.name)
+                end
+            end)
+            return true
+        end,
+    }):find()
 end
 
-vim.keymap.set('n', '<leader>h', run_file, { 
-    desc = "Run current file in new terminal",
-    silent = true 
+telescope.setup({
+    defaults = {
+        file_ignore_patterns = {
+            "node_modules",
+            ".git/",
+            "dist/",
+            "build/",
+            "target/",
+        },
+        mappings = {
+            i = {
+                ["<C-h>"] = "which_key"
+            }
+        }
+    },
+    pickers = {
+        find_files = {
+            hidden = true,
+            attach_mappings = function(prompt_bufnr, map)
+                return true
+            end,
+        },
+    },
 })
 
+vim.keymap.set('n', '<leader>ff', project_find_files, { desc = 'Find files (project-aware)' })
+vim.keymap.set('n', '<leader>fp', switch_project, { desc = 'Switch project' })
+
+vim.keymap.set('n', '<leader>fg', function()
+    local project_root = find_project_root()
+    builtin.live_grep({
+        cwd = project_root or vim.fn.getcwd()
+    })
+end, { desc = 'Live grep in project' })
+
+vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find buffers' })
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help tags' })
+vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current file' })

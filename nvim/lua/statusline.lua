@@ -36,150 +36,6 @@ local function mode()
 end
 
 --- @return string
-local function python_env()
-    local virtual_env = os.getenv 'VIRTUAL_ENV_PROMPT'
-    if virtual_env == nil then
-        return ''
-    end
-
-    virtual_env = virtual_env:gsub('%s+', '') -- delete spaces
-    return string.format('%%#StatusLineMedium# %s%%*', virtual_env)
-end
-
---- @return string
-local function lsp_active()
-    if not rawget(vim, 'lsp') then
-        return ''
-    end
-
-    local current_buf = vim.api.nvim_get_current_buf()
-    local clients = vim.lsp.get_clients { bufnr = current_buf }
-
-    local space = '%#StatusLineMedium# %*'
-
-    if #clients > 0 then
-        return space .. '%#StatusLineMedium#LSP%*'
-    end
-
-    return ''
-end
-
---- @return string
-local function diagnostics_error()
-    local count = get_lsp_diagnostics_count(vim.diagnostic.severity.ERROR)
-    if count > 0 then
-        return string.format('%%#StatusLineLspError# %se%%*', count)
-    end
-
-    return ''
-end
-
---- @return string
-local function diagnostics_warns()
-    local count = get_lsp_diagnostics_count(vim.diagnostic.severity.WARN)
-    if count > 0 then
-        return string.format('%%#StatusLineLspWarn# %sw%%*', count)
-    end
-
-    return ''
-end
-
---- @return string
-local function diagnostics_hint()
-    local count = get_lsp_diagnostics_count(vim.diagnostic.severity.HINT)
-    if count > 0 then
-        return string.format('%%#StatusLineLspHint# %sh%%*', count)
-    end
-
-    return ''
-end
-
---- @return string
-local function diagnostics_info()
-    local count = get_lsp_diagnostics_count(vim.diagnostic.severity.INFO)
-    if count > 0 then
-        return string.format('%%#StatusLineLspInfo# %si%%*', count)
-    end
-
-    return ''
-end
-
---- @class LspProgress
---- @field client vim.lsp.Client?
---- @field kind string?
---- @field title string?
---- @field percentage integer?
---- @field message string?
-local lsp_progress = {
-    client = nil,
-    kind = nil,
-    title = nil,
-    percentage = nil,
-    message = nil,
-}
-
-vim.api.nvim_create_autocmd('LspProgress', {
-    group = statusline_augroup,
-    desc = 'Update LSP progress in statusline',
-    pattern = { 'begin', 'report', 'end' },
-    callback = function(args)
-        if not (args.data and args.data.client_id) then
-            return
-        end
-
-        lsp_progress = {
-            client = vim.lsp.get_client_by_id(args.data.client_id),
-            kind = args.data.params.value.kind,
-            message = args.data.params.value.message,
-            percentage = args.data.params.value.percentage,
-            title = args.data.params.value.title,
-        }
-
-        if lsp_progress.kind == 'end' then
-            lsp_progress.title = nil
-            vim.defer_fn(function()
-                vim.cmd.redrawstatus()
-            end, 500)
-        else
-            vim.cmd.redrawstatus()
-        end
-    end,
-})
-
---- @return string
-local function lsp_status()
-    if not rawget(vim, 'lsp') then
-        return ''
-    end
-
-    if vim.o.columns < 120 then
-        return ''
-    end
-
-    if not lsp_progress.client or not lsp_progress.title then
-        return ''
-    end
-
-    local title = lsp_progress.title or ''
-    local percentage = (
-        lsp_progress.percentage and (lsp_progress.percentage .. '%%')
-    ) or ''
-    local message = lsp_progress.message or ''
-
-    local lsp_message = string.format('%s', title)
-
-    if message ~= '' then
-        lsp_message = string.format('%s %s', lsp_message, message)
-    end
-
-    if percentage ~= '' then
-        lsp_message = string.format('%s %s', lsp_message, percentage)
-    end
-
-    return string.format('%%#StatusLineLspMessages#%s%%* ', lsp_message)
-end
-
---- @return string
 local function git_diff_added()
     local added = get_git_diff 'added'
     if added > 0 then
@@ -313,19 +169,28 @@ StatusLine.active = function()
         }
     end
 
+    --- @return string
+    local function file_location()
+        return string.format('%%#StatusLineMedium# %s %%*', vim.fn.expand('%F'))
+    end
+
+    --- @return string
+    local function buffer_boxes()
+        local buffers = vim.fn.getbufinfo({ buflisted = 1 })
+        local count = #buffers
+        local boxes = string.rep(' ', count)  -- big rounded symbols with spacing
+        return string.format('%%#StatusLineBufferBox#%s%%*', boxes)
+    end
+
+
     local statusline = {
         mode(),
         full_git(),
         '%=',
+        file_location(),
         '%=',
         '%S ',
-        lsp_status(),
-        diagnostics_error(),
-        diagnostics_warns(),
-        diagnostics_hint(),
-        diagnostics_info(),
-        lsp_active(),
-        python_env(),
+        buffer_boxes(),
         file_percentage(),
         total_lines(),
     }
@@ -335,21 +200,3 @@ end
 
 vim.opt.statusline = '%!v:lua.StatusLine.active()'
 
-vim.api.nvim_create_autocmd({ 'WinEnter', 'BufEnter', 'FileType' }, {
-    group = statusline_augroup,
-    pattern = {
-        'NvimTree_1',
-        'NvimTree',
-        'TelescopePrompt',
-        'fzf',
-        'lspinfo',
-        'lazy',
-        'netrw',
-        'mason',
-        'noice',
-        'qf',
-    },
-    callback = function()
-        vim.opt_local.statusline = '%!v:lua.StatusLine.inactive()'
-    end,
-})

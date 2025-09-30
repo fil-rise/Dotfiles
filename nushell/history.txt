@@ -867,3 +867,70 @@ nvim nvim/init.lua
 nvim .config/nvim/init.lua
 git add .
 cd .config
+git add .
+git commit -m "colorizer and gitsign"
+git push
+nvim nvim/init.lua
+clear
+firewall
+nvim nvim/init.lua
+nvim .config/nvim/init.lua
+clear
+python
+python3
+clear
+mkdir LeetCode
+clear
+cd LeetCode/
+clear
+nvim .config/nvim/init.lua
+cd
+nvim .config/nvim/init.lua
+sudo pacman -S xclip
+nvim
+sudo pacman -S xclip
+clear
+nvim .config/nvim/init.lua
+clear
+nvim
+echo "hello" | xclip -selection clipboard
+sudo pacman -S wl-clipboard
+sudo pacman -Rsn xclip
+clear
+nvim
+clear
+cd LeetCode/
+xlear
+clear
+nvim containDuplicate.py
+ls
+cd
+rm -rf LeetCode/
+clear
+ls
+clear
+git clone git@github.com:fil-rise/LeetCode-SOL.git
+clear
+cd LeetCode/
+clear
+cd LeetCode-SOL/
+clear
+nvim containDuplicate.py
+ls
+git add .
+nvim containDuplicate.py
+git commit -m "1. contain duplicate"
+nvim containDuplicate.py
+git push
+clear
+nvim containDuplicate.py
+clear
+cd
+rm -rf LeetCode-SOL/
+nvim .config/nvim/lua/statusline.lua
+nvim .config/kitty/ .
+clear
+lf
+nvim .config/nvim/lua/statusline.lua
+nvim .config/nvim/init.lua
+cd .config
