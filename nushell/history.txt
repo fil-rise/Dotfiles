@@ -1,0 +1,671 @@
+clear
+ls
+clear
+which nu
+chsh
+sudo chsh
+clear
+sudo du
+clear
+kitty +kitten themes
+clear
+nvim .config/sway/config
+mkdir ~/.config/nushell
+nvim .config/nushell/config.nu
+config nu
+clear
+nvim .config/nushell/config.nu
+clear
+config nu
+clear
+nvim .config/nushell/config.nu
+$env.config.buffer_editor = "nvim"
+config nu
+clear
+nvim .config/nushell/config.nu
+nvim Downloads/
+ls
+cd Downloads/
+ls
+rm current-theme.conf kitty.conf kitty.conf.bak
+ls
+clear
+cd ~/.config
+ls
+cd kit
+cd kitty/
+clear
+ls
+nivm .
+clear
+yay -S ttf-firacode
+clear
+yay -S nerd-fonts-fira-code
+sudo pacman -S ttf-fira-code
+clear
+yay -S ttf-firacode
+clear
+nvim kitty.conf
+yay -S ttf-firacode-nerd
+:x
+nvim .config/kitty/ .
+sudo pacman -Rsn ttf-firacode-nerd
+yay -Rsn ttf-firacode
+sudo pacman -Rsn ttf-fira-code
+clear
+cd Downloads/
+ls
+unzip --version
+clear
+sudo pacman -S unzip
+clear
+unzip FiraCode.zip
+ls
+cd
+rm Downloads/*
+clear
+ls
+firefox 20250929_13h35m46s_grim.png
+rm 20250929_13h35m46s_grim.png 
+rm 20250929_13h35m48s_grim.png
+clear
+ls
+cd Downloads/
+ls
+unzip FiraCode.zip -d NerdFont
+ls
+sudo mkdir -p /usr/local/share/fonts/nerd-fonts
+sudo mv NerdFont/*.ttf /usr/local/share/fonts/nerd-fonts/
+clear
+sudo fc-cache -fv
+clear
+fc-list
+clear
+bat fc-list
+clear
+fc-list | grep "Fira"
+clear
+nvim .config/kitty/ .
+cleae
+ls
+cd
+clear
+nvim .config/kitty/ .
+ls
+clear
+nvim .config/kitty/ .
+ls
+nvim .config/kitty/ .
+clear
+nvim .config/kitty/ .
+ls
+clear
+yambar --version
+clear
+sudo pacman -Rsn yambar
+clear
+yambar -v
+clear
+sudo pacman -S yambar
+yay -S yambar-git
+clear
+yay -S yambar-git
+clear
+yay -S yambar-git
+yambar -v
+clear
+yambar -v
+clear
+yay -S yambar
+yambar -v
+clear
+mkdir ~/.config/yambar
+nvim ~/.config/yambar/config.yml
+cd .config/
+ls
+cd yambar/
+clear
+ls
+curl -o ~/.config/yambar/config.yml https://raw.githubusercontent.com/ErikReider/yambar/main/examples/sway.yml
+yambar
+clear
+ls
+nvim config.yml
+ls
+nvim config.yml
+clear
+nvim config.yml
+yambar
+nvim config.yml
+clear
+ls
+rm config.yml
+clear
+ls
+git clone https://github.com/mizzunet/dots/tree/main/config/yambar
+clear
+ls
+nvim config.yml
+yambar
+nvim config.yml
+clear
+rm config.yml
+ls
+clear
+cd
+clear
+sudo pacman -S yambar
+clear
+sudo pacman -Rsn yambar
+clear
+yambar -v
+clear
+yay -S waybar
+clear
+waybar
+clear
+cd .config
+ls
+cd dconf
+ls
+cd
+cd -
+cd
+clear
+cd .config
+ls
+clear
+mkdir waybar
+ls
+nvim config
+nvim style.css
+waybar
+clear
+rm *
+ls
+cd .config/waybar/
+nvim style.css
+nvim config
+nvim .config/kitty/ .
+waybar
+clear
+waybar
+clear
+waybar
+nvim style.css
+clear
+waybar
+nvim config
+nvim style.css
+nvim config
+clear
+waybar
+clear
+nvim config
+waybar
+clear
+waybar
+clear
+waybar
+nvim style.css
+waybar
+cleaer
+clear
+waybar
+clear
+waybar
+nvim config
+clear
+clear
+nvim config
+nvim style.css
+sudo pacman -S --needed bluez bluez-utils blueman
+clear
+lsmod | grep btusb
+sudo nvim /etc/bluetooth/main.conf
+sudo systemctl start bluetooth.service
+sudo systemctl enable bluetooth.service
+clear
+nvim config
+reboot
+waybar
+clear
+cd .config/waybar/
+waybar
+wayabr
+nvim config
+waybar
+clear
+waybar
+nvim style.css
+waybar
+clear
+nvim config
+waybar
+nvim style.css
+waybar
+clear
+clear
+cd
+cd .config/sway
+mako
+clear
+nvim config
+reboot
+nvim .config/sway/config
+reboot
+firefox & disown
+sudo pacman -Rsn wmenu 
+clear
+sudo pacman -S wofi
+wofi
+wofi --show drun
+nvim .config/sway/config
+nvim .config/
+clear
+mkdir .config/wofi
+cd .config/wofi
+clear
+nvim config
+nvim menu
+ls
+nvim menu.css
+nvim menu
+clear
+yay -S pop-launcher
+pop-launcher
+cd
+clear
+pop-launcher -v
+yay -S pop-launcher
+clear
+yay -S --needed pop-launcher-plugins
+clear
+pop-launcher
+clear
+yay -Rsn pop-launcher
+clear
+pop-launcher -v
+clear
+clear
+cd .config/wofi
+nivm config 
+nvim config 
+nvim style.css
+clear
+cd
+clear
+sudo pacman -Rsn vim
+sudo pacman -Rsn foot
+clear
+cd .config/wofi
+nvim config 
+nvim style.css
+ls
+rm menu menu.css
+ls
+nvim style.css
+nvim config 
+systemctl --version
+clear
+ls /sys/firmware/acpi/platform_profile_choices
+clear
+sudo pacman -S fastfetch
+fastfetch
+clear
+ls /sys/firmware/acpi/platform_profile_choices
+fastfetch
+bat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+options amdgpu ppfeaturemask=0xffffffff
+clear
+sudo pacman -S tlp<\n>sudo systemctl enable tlp.service<\n>sudo systemctl start tlp.service
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+clear
+sudo nvim /etc/tlp.conf
+clear
+sudo tlp-stat -s
+sudo tlp-stat | grep "Mode"
+cat /sys/firmware/acpi/platform_profile
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+clear
+cat /sys/firmware/acpi/platform_profile_choices
+clear
+cat /sys/firmware/acpi/platform_profile_choices
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+sudo tlp ac
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+sudo tlp bat
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+clear
+sudo systemctl stop tlp.service<\n>sudo systemctl disable tlp.service<\n>sudo systemctl mask tlp.service
+sudo systemctl stop tlp-sleep.service<\n>sudo systemctl disable tlp-sleep.service<\n>sudo systemctl mask tlp-sleep.service
+sudo pacman -Rns tlp
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+tlp
+clear
+tlp -v
+clear
+sudo rm -rf /etc/tlp.conf<\n>sudo rm -rf /etc/tlp.d/
+sudo systemctl unmask tlp.service<\n>sudo systemctl unmask tlp-sleep.service
+sudo systemctl unmask systemd-rfkill.service<\n>sudo systemctl unmask systemd-rfkill.socket
+cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+clear
+yay -S auto-cpufreq
+sudo systemctl enable --now auto-cpufreq
+sudo auto-cpufreq --stats
+clear
+sudo cpupower frequency-set -g performance
+sudo pacman -S cpupower
+clear
+sudo cpupower frequency-set -g performance
+sudo cpupower frequency-set -g powersave
+sudo cpupower frequency-set -g performance
+clear
+sudo auto-cpufreq --stats
+celar
+clear
+config nu
+$env.config.buffer_editor = "nvim"
+clear
+enable
+stop
+power
+battery
+stats
+clear
+sudo auto-cpufreq --remove
+sudo pacman -R auto-cpufreq
+sudo python3 auto-cpufreq-installer --remove
+systemctl status auto-cpufreq
+sudo kill 19846
+sudo auto-cpufreq --remove
+sudo systemctl disable auto-cpufreq<\n>sudo systemctl daemon-reload<\n>sudo rm /usr/bin/auto-cpufreq<\n>sudo rm -rf /usr/local/share/auto-cpufreq
+systemctl status auto-cpufreq
+ps aux | grep auto-cpufreq
+clear
+config nu
+battery
+cpupower frequency-info
+config nu
+$env.config.buffer_editor = "nvim"
+power
+cpupower frequency-info
+clear
+power
+cpupower frequency-info
+battery
+cpupower frequency-info
+clear
+config nu
+battery
+stats
+ls
+clear
+kitty +kitten themes
+:x
+clear
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \<\n>       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+clear
+mkdir -p ~/.config/nvim
+mkdir ~/.config/nvim
+clear
+ls
+cd .config/nvim
+clear
+ls
+clear
+sudo pacman -S yazi
+clear
+sudo pacman -Rsn yazi
+clear
+yazi
+clear
+sudo pacman -S lf
+clear
+lf
+cd .config/nvim
+clear
+ls
+nvim init.lua
+clear
+nvim init.lua
+shutdown now
+battery
+stats
+nvim .config/nvim/init.lua
+lf
+kitty +kitten themes
+nvim .config/nvim/init.lua
+clear
+kitty +kitten themes
+nvim .config/nvim/init.lua
+kitty +kitten themes
+ls
+nvim .config/nvim/init.lua
+nvim .config/kitty/ .
+kitty +kitten themes
+nvim .config/nvim/init.lua
+ls
+clear
+kitty +kitten themes
+ls
+nvim .config/nvim/init.lua
+kitty +kitten themes
+ls
+nvim .config/nvim/init.lua
+clear
+kitty +kitten themes
+ls
+nvim .config/nvim/init.lua
+kitty +kitten themes
+ls
+clea
+clear
+nvim
+nvim .config/nvim/init.lua
+kitty +kitten themes
+ls
+kitty +kitten themes
+ls
+nvim .config/nvim/init.lua
+kitty +kitten themes
+ls
+mkdir ~/.config/nvim/colors
+kitty +kitten themes
+mkdir ~/.config/nvim/colors
+nvim ~/.config/nvim/colors/custom.vim
+nvim ~/.config/nvim/init.lua
+kitty +kitten themes
+ls
+nvim ~/.config/kitty/kitty.conf
+nvim ~/.config/kitty/ .
+ls
+nvim ~/.config/kitty/ .
+nvim ~/.config/nvim/init.lua
+nvim ~/.config/kitty/ .
+kitty +kitten themes
+nvim ~/.config/kitty/ .
+clear
+nvim ~/.config/nvim/init.lua
+nvim ~/.config/kitty/ .
+cd .config/nvim
+celar
+clear
+ls
+cd plugged
+ls
+clear
+ls
+clear
+cd .
+cd ..
+celsr
+clear
+ls
+rm -rf plugged/
+mkdir lua/core/
+ls
+cd lua/core
+clear
+ls
+touch init.lua plugins.lua keymaps.lua options.lua run.lua
+ls
+nvim ~/.config/nvim/lua/core/init.lua
+cd .config/nvim
+ls
+cd colors/
+ls
+cd ..
+clear
+ls
+mv colors/ lua/core/
+ls
+c dlua
+cd lua
+clear
+cd core
+ls
+nvim init.lua
+:x
+lf
+nvim
+clear
+mv .config/nvim/lua/core/colors/ .config/nvim
+ls
+cd .config/nvim
+clear
+ls
+cd colors/
+ls
+nvim .config/nvim/init.lua
+cd .config/nvim
+ls
+rm -rf lua
+clear
+nvim .config/nvim/init.lua
+nvim init.lua
+lf
+nvim .config/nvim/init.lua
+mkdir ~/.config/nvim/lua/
+nvim .config/nvim/lua/statusline.lua
+nvim
+ls
+cd Downloads//nvim
+clear
+ls
+cd lua
+ls
+cd core
+ls
+clear
+ls
+nvim .config/nvim/init.lua
+nvim
+nvim .config/nvim/init.lua
+nvim
+nvim .config/nvim/init.lua
+nvim
+nvim .config/nvim/init.lua
+nvim .config/nvim/colors/custom.vim
+nvim .config/nvim/init.lua
+nvim .config/nvim/colors/custom.vim
+nvim .config/nvim/init.lua
+nvim .config/kitty/ .
+ls
+clear
+nvim .config/nvim/init.lua
+nvim .config/kitty/ .
+nvim .config/nvim/init.lua
+x
+clear
+nvim .config/nvim/init.lua
+clear
+lf
+mkdir CP
+clear
+ls
+cd Downloads/
+ls
+clear
+shutdown now
+battery
+stats
+clear
+sudo pacman -S ufw
+sudo systemctl enable ufw --now
+sudo ufw enable
+sudo ufw status verbose
+clear
+config nu
+$env.config.buffer_editor = "nvim"
+firewall
+config nu
+$env.config.buffer_editor = "nvim"
+config nu
+firewall
+clear
+$env.config.buffer_editor = "nvim"
+config nu
+stats
+clear
+cd wallpapers/
+ls
+mv ~/Downloads/UniversalUpscaler_f22a74c5-5a86-4f9d-ae3c-b21c302bebba.jpg ~/wallpapers/
+ls
+nvim .
+clear
+nvim ~/.config/sway/config
+battery
+git config --global user.name "fil-rise"
+git config --global user.email pseudofall179@gmail.com
+git config --global init.defaultBranch main
+git config --global pull.rebase false
+git config --get user.name<\n>git config --get user.email
+clear
+ls ~/.ssh/id_ed25519.pub
+ssh-keygen -t ed25519
+bat ~/.ssh/id_ed25519.pub
+clear
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+clear
+cd .config
+clear
+ls
+git -v
+git init
+clear
+ls
+ls -a
+clear
+nvim .gitignore
+clear
+ls -a
+git add .
+clear
+git commit -m "Dotfiles"
+git branch -M main
+git remote add origin https://github.com/fil-rise/Dotfiles.git
+git push -u origin main
+clear
+git push -u origin main
+clear
+git add .
+git status
+clear
+git push -u origin main
+clear
+git remote set-url origin git@github.com:your-username/your-repo.git
+cd .config
+ls
+ls -a
+rm .git .gitignore
+rm -rf .git .gitignore
+clear
+ls
+git ls-files --error-unmatch ~/.config
+git ls-files --error-unmatch /
+clear
+git init
+git commit -m "Dotfiles"
+clear
