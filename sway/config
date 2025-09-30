@@ -25,7 +25,7 @@ gaps outer 2
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/wallpapers/MOONEATER.jpg fill
+output * bg ~/.config/MOONEATER.jpg fill
 #
 # Example configuration:
 #

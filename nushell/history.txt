@@ -691,3 +691,42 @@ nvim .gitignore
 git add .
 git commit -m ".gitignore added"
 git push
+git rm -r --cached .<\n>git add .<\n>git commit -m "Remove ignored files from repo"
+git push
+clear
+touch install.sh
+cd .config
+ls
+cd .config/
+ls
+cd
+ls
+clear
+lf
+clear
+cp wallpapers/MOONEATER.jpg .config/
+ls
+cd .config/
+ls
+nvim .config/sway/config
+ls
+cd .config/
+ls
+nvim install.sh
+clear
+cd
+clear
+cat /boot/limine/limine.conf
+cat /efi/limine/limine.conf
+cd /boot
+cd
+mkdir /boot/limine/
+sudo mkdir /boot/limine/
+nvim /boot/limine/limine.conf
+sudo nvim /boot/limine/limine.conf
+nvim /boot/limine/limine.conf
+sudo nvim /boot/limine/limine.conf
+nvim /boot/limine/limine.conf
+clear
+reboot
+cd .config
