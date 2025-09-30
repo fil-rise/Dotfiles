@@ -688,3 +688,6 @@ cd nvim/
 ls
 cd ..
 nvim .gitignore
+git add .
+git commit -m ".gitignore added"
+git push
