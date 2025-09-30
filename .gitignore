@@ -1,0 +1,7 @@
+.mozilla/
+dconf/
+gtk-3.0/
+pavucontrol.ini
+pulse/
+yay/
+nvim/plugged/

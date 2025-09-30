@@ -669,3 +669,22 @@ clear
 git init
 git commit -m "Dotfiles"
 clear
+git add .
+clear
+git commit -m "Dotfiles"
+git branch -M main
+git remote add origin git@github.com:fil-rise/Dotfiles.git
+git push -u origin main
+clear
+touch .gitignore README.md
+cd .config
+ls -a
+nvim .gitignore
+sudo pacman -Rsn yambar
+rm -rf yambar/
+nvim README.md
+clear
+cd nvim/
+ls
+cd ..
+nvim .gitignore
