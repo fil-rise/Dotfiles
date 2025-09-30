@@ -953,3 +953,41 @@ cd LeetCode/
 touch .project
 cd
 cd .config
+git add .
+git commit -m ".project"
+git push
+clear
+cd
+clear
+cd LeetCode/
+clear
+nvim containDuplicate.py
+cd ~/.config/nvim/init.lua
+cd
+cd ~/.config/nvim/init.lua
+cd .config/nvim/init.lua
+cd .config
+cd nvim
+nvim init.lua
+clear
+cd
+clear
+nvim LeetCode/containDuplicate.py
+nvim .config/nvim/init.lua
+nvim LeetCode/containDuplicate.py
+nvim try.cpp
+ls
+clear
+cd LeetCode/
+ls
+nvim containDuplicate.py
+clear
+nvim LeetCode//containDuplicate.py
+nvim .config/nvim/init.lua
+nvim LeetCode//containDuplicate.py
+nvim .config/nvim/init.lua
+nvim LeetCode//containDuplicate.py
+clear
+ls
+clear
+cd .config
