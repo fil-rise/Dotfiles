@@ -934,3 +934,22 @@ lf
 nvim .config/nvim/lua/statusline.lua
 nvim .config/nvim/init.lua
 cd .config
+git add .
+git commit -m "telescope and statusline"
+git push
+clear
+nvim .config/kitty/ .
+cd
+clear
+nvim .config/kitty/kitty.conf
+nivm .config/nvim/init.lua
+nvim .config/nvim/init.lua
+nvim
+nvim .config/nvim/ .
+nvim
+clear
+mkdir LeetCode
+cd LeetCode/
+touch .project
+cd
+cd .config
