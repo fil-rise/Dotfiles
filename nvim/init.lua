@@ -9,6 +9,7 @@ vim.cmd [[
   Plug 'windwp/nvim-autopairs'
   Plug 'numToStr/Comment.nvim'
   Plug 'alvan/vim-closetag'
+  Plug 'lewis6991/gitsigns.nvim'
 
   call plug#end()
 ]]
@@ -26,11 +27,24 @@ vim.api.nvim_set_hl(0, "FloatBorder", {bg = "none"})
 vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", {bg = "none"})        
 
+-- Statusline colors
+vim.api.nvim_set_hl(0, "StatusLine", { fg = "#ffffff", bg = "#303030" })  -- default
+vim.api.nvim_set_hl(0, "StatusLineMode", { fg = "#000000", bg = "#98c379", bold = true })
+vim.api.nvim_set_hl(0, "StatusLineMedium", { fg = "#abb2bf", bg = "#303030" })
+
+-- Git colors
+vim.api.nvim_set_hl(0, "StatusLineGitDiffAdded", { fg = "#98c379", bg = "#303030" })
+vim.api.nvim_set_hl(0, "StatusLineGitDiffChanged", { fg = "#e5c07b", bg = "#303030" })
+vim.api.nvim_set_hl(0, "StatusLineGitDiffRemoved", { fg = "#e06c75", bg = "#303030" })
+vim.api.nvim_set_hl(0, "StatusLineGitBranchIcon", { fg = "#61afef", bg = "#303030" })
+
+
 --===================================================================================================================
 --SETUPS+PLUGINS
 --===================================================================================================================
 
 require("statusline")
+require('gitsigns').setup()
 
 -- Treesitter
 require('nvim-treesitter.configs').setup {
@@ -117,7 +131,7 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   end,
 })
 
-vim.opt.signcolumn = 'no'
+-- vim.opt.signcolumn = 'no'
 
 --===================================================================================================================
 --KEYMAPS

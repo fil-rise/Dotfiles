@@ -846,3 +846,16 @@ git rm -r install.sh
 clear
 git rm install.sh
 clear
+git add .
+git commit -m "nothing much"
+git push
+clear
+battery
+clear
+cd
+clear
+nvim .config/nvim/init.lua
+nvim .config/nvim/colors/custom.vim
+clear
+nvim .config/nvim/init.lua
+cd .config
