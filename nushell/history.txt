@@ -730,3 +730,111 @@ nvim /boot/limine/limine.conf
 clear
 reboot
 cd .config
+git add .
+git commit -m "install.sh and more"
+git push
+cd
+clear
+cd /boot/limine
+ls
+nvim /boot/limine/limine.conf
+sudo nvim /boot/limine/limine.conf
+reboot
+sudo nvim /boot/limine/limine.conf
+reboot
+battery
+stats
+clear
+nvim .config/sway/config
+ls
+nvim .config/kitty/ .
+nvim .config/sway/config
+clear
+cd CP
+nvim try.cpp
+rm a.out try.cpp
+clear
+cd
+clear
+ls
+cd .config
+nvim sway/config
+nvim nvim/init.lua
+cd
+nvim try.cpp
+nvim try.c
+ls
+clera
+clear
+nvim .config/nvim/init.lua
+nvim .config/sway/config
+clear
+BATTERY
+battery
+cd .config
+ls
+cpupower -v
+nvim .config/install.sh
+cat /boot/limine/limine.conf
+cd .config
+touch limine.conf
+nvim limine.conf
+cd Downloads/
+ls
+rm -rf `FiraCode(2).zip` `FiraCode(1).zip`
+clear
+ls
+mv NerdFont/ .config/
+cd ~/.config
+ls
+clear
+cd
+cd boot/limine
+cd /boot/limine
+cd
+cd ~/boot/limine
+clear
+cd ~/.local/share/fonts
+cd .local/share/fonts
+cd .local
+cd
+clear
+cd /.local
+c;ear
+clear
+cd /boot
+cd
+cd .local
+xd
+cd
+cd /.local
+clear
+cd .local
+cd share/
+ls
+ls -a
+cd /usr/share
+ls
+clear
+cd fonts/
+ls
+ls -a
+cd ..
+ls 
+cd fontconfig/
+ls
+cd
+clear
+fc-list | grep "Fira"
+cd /usr/local/share/fonts
+ls
+cd .config
+ls
+clear
+lf
+nvim .config/install.sh
+cd .config
+ls
+nvim THINGS_TO_DO
+nvim install.sh
+rm install.sh

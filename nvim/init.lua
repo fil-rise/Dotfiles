@@ -5,7 +5,7 @@
 vim.cmd [[
   call plug#begin('~/.config/nvim/plugged')
 
-  Plug 'nvim-treesitter/nvim-treesitter'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do':':TSUpdate'}
   Plug 'windwp/nvim-autopairs'
   Plug 'numToStr/Comment.nvim'
   Plug 'alvan/vim-closetag'

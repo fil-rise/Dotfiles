@@ -22,6 +22,14 @@ default_border pixel 2
 gaps inner 2
 gaps outer 2
 
+# client.<state>        border    background text     indicator child_border
+
+client.focused          #A2A970   #000000    #000000  #A2A970   #A2A970
+client.focused_inactive #888888   #000000    #000000  #888888   #888888
+client.unfocused        #555555   #000000    #000000  #555555   #555555
+client.urgent           #cc4444   #000000    #000000  #cc4444   #cc4444
+
+
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
@@ -51,10 +59,10 @@ output * bg ~/.config/MOONEATER.jpg fill
 # Example configuration:
 #
    input type:touchpad {
-#       dwt enabled
+#      dwt enabled
        tap enabled
        natural_scroll enabled
-#       middle_emulation enabled
+#      middle_emulation enabled
    }
 #
 #   input type:keyboard {

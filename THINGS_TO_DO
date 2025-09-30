@@ -1,0 +1,39 @@
+#========================================================================================
+
+pacman -Syu --noconfirm
+
+yay install
+
+pacman -S --needed --noconfirm sway swaybg swaylock waybar \
+    kitty lf neovim nushell grim slurp wl-clipboard mako   \
+    wofi bluez bluez-utils blueman cpupower unzip ufw
+
+sudo systemctl enable ufw --now
+sudo ufw enable
+
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim \
+    --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+#=======================================================================================
+
+mkdir -p ~/.config/{sway,waybar,wofi,kitty,nvim,nushell,mako}
+mkdir -p  /usr/local/share/fonts/nerd-fonts   
+
+cp -r ./sway/*      ~/.config/sway/
+cp -r ./waybar/*    ~/.config/waybar/
+cp -r ./wofi/*      ~/.config/wofi/
+cp -r ./kitty/*     ~/.config/kitty/
+cp -r ./nvim/*      ~/.config/nvim/
+cp -r ./nushell/*   ~/.config/nushell/
+cp -r ./mako/*      ~/.config/mako/
+cp -r ./limine.conf /boot/limine/
+
+cp -r ./NerdFont/*  /usr/local/share/fonts/nerd-fonts   
+fc-cache -fv
+
+cp -r ./MOONEATER.jpg     ~/.config/
+
+1.AUTOENABLE sudo nvim /etc/bluetooth/main.conf
+2.sudo systemctl start bluetooth.service
+3.sudo systemctl enable bluetooth.service
+4.Change shell with chsh and see the location of nu using cat /etc/shells
