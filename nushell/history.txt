@@ -838,3 +838,11 @@ ls
 nvim THINGS_TO_DO
 nvim install.sh
 rm install.sh
+git add .
+git commit -m "steps"
+git push
+clear
+git rm -r install.sh
+clear
+git rm install.sh
+clear
