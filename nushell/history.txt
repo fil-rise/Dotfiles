@@ -991,3 +991,41 @@ clear
 ls
 clear
 cd .config
+git add .; git commit -m "colorscheme"; git push
+clear
+nvim .config/nvim/init.lua
+nvim nvim/init.lua
+cd
+clear
+nvim LeetCode//containDuplicate.py
+nvim .config/nvim/init.lua
+nvim LeetCode//containDuplicate.py
+nvim .config/nvim/init.lua
+clear
+cd LeetCode/
+nvim .config/nvim/init.lua
+rm containDuplicate.py
+clear
+cd LeetCode/
+nvim containDuplicate.cpp
+rm containDuplicate.cpp
+clear
+cd
+clear
+battery
+clear
+nvim .config/sway/config
+battery
+clear
+stats
+clear
+ls
+clear
+nvim try.cpp
+nvim .config/nvim/init.lua
+nvim try.cpp
+nvim try.py
+nvim try.cpp
+nvim try.py
+clear
+cd .config

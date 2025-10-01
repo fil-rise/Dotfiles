@@ -45,11 +45,6 @@ output * bg ~/.config/MOONEATER.jpg fill
 #
 # Example configuration:
 #
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -78,7 +73,9 @@ output * bg ~/.config/MOONEATER.jpg fill
 #
     # Start a terminal
     bindsym $mod+Return exec $term
-
+    bindsym $mod+z exec swaylock -f -c 000000 \
+            --indicator-radius 100 \
+            --indicator-thickness 5
     # Kill focused window
     bindsym $mod+q kill
 
@@ -207,7 +204,7 @@ mode "resize" {
     # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
-}
+    }
 bindsym $mod+r mode "resize"
 #
 # Utilities:

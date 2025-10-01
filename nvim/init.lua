@@ -13,7 +13,7 @@ vim.cmd [[
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'vague2k/vague.nvim'
+  Plug 'gmr458/cold.nvim'
 
   call plug#end()
 ]]
@@ -23,7 +23,7 @@ vim.cmd [[
 --=====================================================================================
 
 vim.o.background = "dark"
-vim.cmd("colorscheme vague")
+vim.cmd("colorscheme cold")
 
 vim.api.nvim_set_hl(0, "Normal", {bg = "none"})            
 vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})          
