@@ -13,7 +13,10 @@ vim.cmd [[
   Plug 'norcalli/nvim-colorizer.lua'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'gmr458/cold.nvim'
+  " Plug 'gmr458/cold.nvim'
+  " Plug 'sainnhe/gruvbox-material'
+  " Plug 'AlexvZyl/nordic.nvim'
+  " Plug 'savq/melange-nvim'
 
   call plug#end()
 ]]
@@ -23,7 +26,10 @@ vim.cmd [[
 --=====================================================================================
 
 vim.o.background = "dark"
-vim.cmd("colorscheme cold")
+vim.cmd("colorscheme custom_star")
+
+vim.opt.colorcolumn = "87"
+vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 0, bg = "#303030" })
 
 vim.api.nvim_set_hl(0, "Normal", {bg = "none"})            
 vim.api.nvim_set_hl(0, "NormalNC", {bg = "none"})          
@@ -328,3 +334,10 @@ end, { desc = 'Live grep in project' })
 vim.keymap.set('n', '<leader>fb', builtin.buffers, { desc = 'Find buffers' })
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, { desc = 'Help tags' })
 vim.keymap.set('n', '<leader>/', builtin.current_buffer_fuzzy_find, { desc = 'Search in current file' })
+vim.keymap.set('n', '<leader>th', ':Telescope colorscheme<CR>', { desc = 'Change theme' })
+
+
+
+
+
+

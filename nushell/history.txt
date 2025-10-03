@@ -1029,3 +1029,165 @@ nvim try.cpp
 nvim try.py
 clear
 cd .config
+git add .; git commit -m "colorscheme"; git push
+clear
+nvim try.cpp
+nvim try.py
+rm try.cpp try.py
+clear
+ls
+cd
+nvim .config/nvim/init.lua
+nvim .config/nvim/colors/custom.vim
+nvim try.cpp
+nvim try.py
+nvim try.cpp
+nvim try.py
+nvim try.cpp
+nvim try.py
+nvim .config/nvim/init.lua
+nvim try.cpp
+clear
+nvim try.py
+clear
+nvim try.py
+nvim try.cpp
+nvim try.py
+rm try.cpp try.py
+clear
+ls
+nvim .config/nvim/init.lua
+clear
+nvim .config/kitty/kitty.conf
+nvim .config/nvim/init.lua
+nvim .config/kitty/kitty.conf
+nvim .config/nvim/init.lua
+nvim .config/kitty/kitty.conf
+nvim .config/nvim/init.lua
+nvim .config/kitty/kitty.conf
+nvim .config/nvim/init.lua
+nvim .config/kitty/kitty.conf
+nvim .config/nvim/init.lua
+nivm .config/nvim/init.lua
+nvim .config/nvim/init.lua
+clear
+nvim .config/sway/config
+rm 20251001_20h25m55s_grim.png
+rm 20251001_20h24m49s_grim.png
+ls
+clear
+cd .config
+ls
+cd /home/pseudofall/.config/nvim/plugged<\n>
+ls
+clear
+nvim .config/nvim/init.lua
+nvim .config/nvim/colors/custom.vim
+nvim .config/nvim/init.lua
+cmake --v
+cleaer
+clear
+shutdown now
+battery
+stats
+ls
+cd CP/
+ls
+cd ..
+rm -rf CP/
+clear
+ls
+nmtui
+stats
+nmtui
+nvim .config/sway/config
+nmtui
+git clone git@github.com:fil-rise/SentinelAtlas.git
+clear
+ls
+rm -rf SentinelAtlas/
+clear
+ls
+mkdir PROJECTS
+clear
+ls
+clear
+cd PROJECTS/
+git clone git@github.com:fil-rise/SentinelAtlas.git
+cd SentinelAtlas/
+clear
+ls
+nmtui
+shutdown now
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim try.cpp
+nvim .config/nvim/colors/custom.vim
+nvim try.cpp
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim try.cpp
+nvim .config/nvim/colors/custom.vim
+nvim try.cpp
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim try.py
+clear
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+shutdown now
+battery
+clear
+nmtui
+nvim .config/nvim/colors/custom.vim
+nvim .config/nvim/colors/ .
+nvim try.py
+nvim try.cpp
+clear
+nvim .config/nvim/colors/custom.vim
+nvim .config/nvim/colors/custom_star.vim
+nvim try.cpp
+nvim try.py
+nvim .config/nvim/colors/custom.vim
+nvim .config/nvim/colors/custom_star.vim.vim
+nvim .config/nvim/colors/custom_star.vim
+nvim .config/nvim/colors/custom.vim
+clear
+nvim .config/nvim/init.lua
+nvim .config/nvim/colors/custom_star.vim
+nvim .config/nvim/ .
+clear
+mkdir CLASS_LAB
+clear
+nvim try.py
+nvim try.cpp
+clear
+nvim .config/nvim/colors/custom_star.vim
+nvim try.py
+nvim try.cpp
+nvim .config/nvim/colors/custom_star.vim
+nvim try.cpp
+nvim try.py
+clear
+cd .config
