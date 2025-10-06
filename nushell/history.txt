@@ -1380,3 +1380,4 @@ nmtui
 shutdown now
 cd .config/
 git add .; git commit -m " "; git push
+git add .; git commit -m "Finalize"; git push
