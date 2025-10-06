@@ -1191,3 +1191,192 @@ nvim try.cpp
 nvim try.py
 clear
 cd .config
+git add .; git commit -m "colorscheme"; git push
+clear
+nmtui
+curl "https://api.cloudflare.com/client/v4/radar/http/summary/device_type?dateRange=7d&format=json" \<\n>--header "Authorization: Bearer jCgLRUdBFk8i7FWiLCJESp8dFA4PKDml5EAqPo9_"
+clear
+curl "https://api.cloudflare.com/client/v4/radar/http/summary/device_type?dateRange=7d&format=json" \<\n>--header "Authorization: Bearer jCgLRUdBFk8i7FWiLCJESp8dFA4PKDml5EAqPo9_"
+clear
+stats
+clear
+nvim try.py
+nvim try.cpp
+clear
+curl "https://api.cloudflare.com/client/v4/user/tokens/verify" \<\n>     -H "Authorization: Bearer jCgLRUdBFk8i7FWiLCJESp8dFA4PKDml5EAqPo9_"
+clear
+curl "https://api.cloudflare.com/client/v4/user/tokens/verify" -H "Authorization: Bearer jCgLRUdBFk8i7FWiLCJESp8dFA4PKDml5EAqPo9_"
+curl "https://api.cloudflare.com/client/v4/user/tokens/verify" /-H "Authorization: Bearer jCgLRUdBFk8i7FWiLCJESp8dFA4PKDml5EAqPo9_"
+clear
+curl "https://api.cloudflare.com/client/v4/user/tokens/verify" -H "Authorization: Bearer jCgLRUdBFk8i7FWiLCJESp8dFA4PKDml5EAqPo9_"
+clear
+python --version
+pip --version
+sudo pacman -S --needed python python-pip
+pip --version
+clear
+pip install notebook
+sudo pacman -Syu
+clear
+sudo pacman -S python-pipx
+pipx ensurepath
+performance
+power
+stats
+pipx install notebook
+jupyter-notebook
+clear
+nvim ~/.config/nushell/env.nu
+source ~/.config/nushell/env.nu
+clear
+nvim ~/.config/nushell/env.nu
+pipx ensurepath
+nvim ~/.bashrc
+config nu
+$env.config.buffer_editor = "nvim"
+bash && jupyter-notebook
+config nu
+clear
+jn
+config nu
+$env.config.buffer_editor = "nvim"
+fastfetch
+battery
+config nu
+nvim .config/nvim/init.lua
+ls
+config nu
+$env.config.buffer_editor = "nvim"
+config nu
+cclear
+lf
+clear
+cd .config/
+ls
+firefox MOONEATER.jpg
+clear
+nvim nvim/init.lua
+config nu
+$env.config.buffer_editor = "nvim"
+nmtui
+clear
+config nu
+bash -c "jupyter-notebook"
+clear
+bash -c 'echo "Hello World"'
+jupyter notebook
+^jupyter notebook
+which jupyter
+clear
+~/.local/bin/jupyter notebook
+~/.local/bin/jupyter-notebook
+clear
+config env
+source ~/.config/nushell/env.nu
+jupyter notebook
+jupyter-notebook
+clear
+config nu
+$env.config.buffer_editor = "nvim"
+config nu
+jn
+clear
+shutdown now
+nmtui
+pipx runpip jupyter install pandas requests
+pipx runpip notebook install pandas requests
+jn
+clear
+clear
+nvim try1.py
+python try1.py
+clear
+pip install pandas
+clear
+nvim .bashrc
+config nu
+$env.config.buffer_editor = "nvim"
+config nu
+config env
+pipx uninstall-all
+pip uninstall pipx
+sudo pacman -Rsn pipx
+rm -rf ~/.local/pipx
+clear
+pip install pandas
+clear
+ls
+rm -rf JupyterNotebook/
+clear
+cd PROJECTS/
+ls
+cd SentinelAtlas/
+ls
+clear
+cd
+nvim .config/nvim/init.lua
+nvim try1.py
+nvim try.py
+nvim try.cpp
+clear
+nvim .config/nvim/init.lua
+clear
+cd PROJECTS/SentinelAtlas/
+python -m venv venv
+source venv/bin/activate
+clear
+cd PROJECTS/SentinelAtlas/
+overlay use venv/bin/activate.nu
+ls
+cd venv/
+ls
+clear
+nvim .bashrc
+nvim .config/nvim/init.lua
+nvim try.cpp
+cd PROJECTS/SentinelAtlas/
+bash
+clear
+nvim idea.py
+ls
+python %
+exit
+nvim .config/nvim/init.lua
+bash
+cd PROJECTS/SentinelAtlas/
+bash
+nvim .config/nvim/init.lua
+nvim try.py
+nvim .config/nvim/init.lua
+cd PROJECTS/SentinelAtlas/
+nvim .config/nvim/init.lua
+nvim try.py
+ls
+clear
+exit
+nvim .config/nvim/init.lua
+ls
+clear
+exit
+nvim .config/nvim/init.lua
+ls
+clear
+exit
+ls
+python idea.py
+:x
+exit
+bash
+lf
+shutdown now
+nmtui
+nvim .config/nvim/init.lua
+nmtui
+nvim .config/nvim/init.lua
+passwd
+nmtui
+clear nmtui
+nmtui
+shutdown now
+cd .config/
+git add .; git commit -m " "; git push

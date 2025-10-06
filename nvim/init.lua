@@ -18,8 +18,29 @@ vim.cmd [[
   " Plug 'AlexvZyl/nordic.nvim'
   " Plug 'savq/melange-nvim'
 
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-buffer'
+
+
   call plug#end()
 ]]
+
+--=====================================================================================
+--CMP
+--=====================================================================================
+
+local cmp = require('cmp')
+cmp.setup({
+    sources = {
+        { name = 'buffer' },
+    },
+    mapping = cmp.mapping.preset.insert({
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+        ['<C-n>'] = cmp.mapping.select_next_item(),
+        ['<C-p>'] = cmp.mapping.select_prev_item(),
+    }),
+})
 
 --=====================================================================================
 --BACKGROUND & COLORSCHEMES
@@ -96,6 +117,13 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
     callback = function()
         vim.hl.on_yank()
+    end,
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    callback = function()
+        vim.cmd('normal gg=G``')  -- `` returns to original position
     end,
 })
 
@@ -178,6 +206,8 @@ vim.keymap.set('n', '<leader>q', ':q<CR>')
 vim.keymap.set('n', '<leader>x', ':x<CR>')
 vim.keymap.set('n', '<leader>xa', ':xa<CR>')
 vim.keymap.set('n', '<leader>so', ':so %<CR>')
+
+vim.keymap.set('n', '<leader>vt', ':vsplit |terminal <CR>')
 
 -- Remove search highlights
 vim.keymap.set('n', '<Esc>', ':noh<CR>')
